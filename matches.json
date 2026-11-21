@@ -6,13 +6,5 @@
     "homeLogo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
     "awayLogo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Celta_de_Vigo_logo.svg",
     "link": "https://t.me/footballDop"
-  },
-  {
-    "home": "Barcelona",
-    "away": "Sevilla",
-    "time": "22:00",
-    "homeLogo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
-    "awayLogo": "https://upload.wikimedia.org/wikipedia/en/3/3b/Sevilla_FC_logo.svg",
-    "link": "https://t.me/footballDop"
   }
 ]
