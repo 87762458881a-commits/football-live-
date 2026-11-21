@@ -18,7 +18,9 @@ a{display:block;text-align:center;background:#ff7900;padding:12px;border-radius:
 <body>
 <h1>footballDop</h1>
 <h2>⚽ Тікелей эфир</h2>
-<div id="matches">Жүктелуде...</div>
+<div id="matches">Жүктелуде...</div> <div class="days">
+  <button onclick="showAll()">Барлық матч</button>
+</div>
 <script>
 fetch('./matches.json')
 .then(r=>r.json())
