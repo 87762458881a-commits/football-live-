@@ -3,34 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>footballDop LIVE</title>
+<title>footballDop</title>
 <style>
-body{margin:0;background:#101010;color:white;font-family:Arial;padding:20px}
+body{background:#101010;color:white;font-family:Arial;margin:0;padding:15px}
 h1{color:#ff7900}
-.match{background:#202020;border-radius:15px;padding:20px;margin:15px 0}
-.teams{display:flex;justify-content:space-between;font-weight:bold}
-.time{color:#ff7900;margin:10px 0}
-a{display:block;background:#ff7900;color:white;text-align:center;padding:12px;border-radius:10px;text-decoration:none}
+.match{background:#222;padding:18px;border-radius:15px;margin:15px 0}
+.teams{display:flex;align-items:center;justify-content:space-around;text-align:center}
+.team{width:40%;font-weight:bold}
+.logo{width:70px;height:70px;object-fit:contain;display:block;margin:auto auto 10px}
+.time{text-align:center;color:#ff7900;margin:15px}
+a{display:block;text-align:center;background:#ff7900;padding:12px;border-radius:10px;color:white;text-decoration:none}
 </style>
 </head>
 <body>
 <h1>footballDop</h1>
 <h2>⚽ Тікелей эфир</h2>
 <div id="matches">Жүктелуде...</div>
-
 <script>
 fetch('./matches.json')
 .then(r=>r.json())
 .then(matches=>{
 document.getElementById('matches').innerHTML=matches.map(m=>`
 <div class="match">
-<div class="teams"><span>${m.home}</span><span>${m.away}</span></div>
+<div class="teams">
+<div class="team"><img class="logo" src="${m.homeLogo}">${m.home}</div>
+<div>VS</div>
+<div class="team"><img class="logo" src="${m.awayLogo}">${m.away}</div>
+</div>
 <div class="time">${m.time}</div>
 <a href="${m.link}" target="_blank">▶ Трансляцияны көру</a>
 </div>
 `).join('');
-})
-.catch(()=>document.getElementById('matches').innerText='Матчтер жүктелмеді');
+});
 </script>
 </body>
 </html>
