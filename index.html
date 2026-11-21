@@ -13,12 +13,25 @@ h1{color:#ff7900}
 .logo{width:70px;height:70px;object-fit:contain;display:block;margin:auto auto 10px}
 .time{text-align:center;color:#ff7900;margin:15px}
 a{display:block;text-align:center;background:#ff7900;padding:12px;border-radius:10px;color:white;text-decoration:none}
-</style>
+</style>.days{
+  display:flex;
+  justify-content:center;
+  margin:15px 0;
+}
+.days button{
+  background:#ff7900;
+  color:white;
+  border:none;
+  padding:12px 25px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
 </head>
 <body>
 <h1>footballDop</h1>
 <h2>⚽ Тікелей эфир</h2>
-<div id="matches">Жүктелуде...</div> <div class="days">
+<div id="matches">Жүктелуде... <div class="days">
   <button onclick="showAll()">Барлық матч</button>
 </div>
 <script>
