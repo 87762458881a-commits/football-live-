@@ -13,7 +13,11 @@ h1{color:#ff7900}
 .logo{width:70px;height:70px;object-fit:contain;display:block;margin:auto auto 10px}
 .time{text-align:center;color:#ff7900;margin:15px}
 a{display:block;text-align:center;background:#ff7900;padding:12px;border-radius:10px;color:white;text-decoration:none}
-</style>..match{
+</style>.live{
+  color:#ff7900;
+  font-size:13px;
+  font-weight:bold;
+}..match{
   background:linear-gradient(145deg,#1b1b1b,#292929);
   border:1px solid #ff7900;
   box-shadow:0 0 10px rgba(255,121,0,0.15);
@@ -57,7 +61,10 @@ document.getElementById('matches').innerHTML=matches.map(m=>`
 <div>VS</div>
 <div class="team"><img class="logo" src="${m.awayLogo}">${m.away}</div>
 </div>
-<div class="time">${m.time}</div>
+<div <div class="time">
+  <span class="live">● LIVE</span><br>
+  ${m.time}
+</div>
 <a href="${m.link}" target="_blank">▶ Трансляцияны көру</a>
 </div>
 `).join('');
