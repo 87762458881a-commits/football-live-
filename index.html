@@ -50,6 +50,10 @@ document.getElementById('matches').innerHTML=matches.map(m=>`
 </div>
 `).join('');
 });
-</script>
+</script>function showAll(){
+  document.getElementById('matches').scrollIntoView({
+    behavior:'smooth'
+  });
+}
 </body>
 </html>
