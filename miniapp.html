@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>footballDop LIVE</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body{margin:0;background:#101114;color:white;font-family:Arial;padding:18px}
+h1{color:#ff7900}
+.card{background:#202126;padding:16px;border-radius:15px;margin:12px 0}
+button{background:#ff7900;border:0;padding:14px;border-radius:12px;color:white;width:100%;font-size:16px}
+a{color:#ff7900}
+</style>
+</head>
+<body>
+<h1>⚽ footballDop</h1>
+<p>LIVE футбол</p>
+
+<div class="card">
+<h3>📅 Матчтар</h3>
+<a href="./index.html">Матчтар кестесі</a>
+</div>
+
+<div class="card">
+<h3>📺 Трансляция</h3>
+<p>Матчтың видео сілтемесін таңда</p>
+<a href="https://t.me/footballDop">Видео сілтемелері</a>
+</div>
+
+<div class="card">
+<h3>💬 Жанкүйерлер чаты</h3>
+<a href="https://t.me/footballDop">Чатқа кіру</a>
+</div>
+
+<button onclick="Telegram.WebApp.close()">Жабу</button>
+<script>
+Telegram.WebApp.ready();
+Telegram.WebApp.expand();
+</script>
+</body>
+</html>
