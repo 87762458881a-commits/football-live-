@@ -2,51 +2,43 @@
 <html lang="kk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>footballDop Live</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>footballDop LIVE</title>
 <style>
-body{
- background:#101010;
- color:white;
- font-family:Arial;
- padding:20px;
- margin:0;
-}
+body{margin:0;padding:16px;background:#101114;color:white;font-family:Arial}
 h1{color:#ff7900;text-align:center}
-.card{
- background:#222;
- padding:20px;
- margin:15px 0;
- border-radius:15px;
- border:1px solid #ff7900;
-}
-a{
- display:block;
- background:#ff7900;
- padding:15px;
- color:white;
- text-decoration:none;
- text-align:center;
- border-radius:10px;
- font-weight:bold;
-}
+.card{background:#202126;border:1px solid #ff7900;padding:16px;border-radius:15px;margin:14px 0}
+.match{display:flex;align-items:center;justify-content:space-between;text-align:center;gap:8px}
+.team{flex:1;font-weight:bold}
+.time{color:#ff7900;font-weight:bold}
+a{display:block;background:#ff7900;color:white;padding:12px;text-align:center;border-radius:10px;text-decoration:none;margin-top:12px}
 </style>
 </head>
 <body>
-
 <h1>⚽ footballDop LIVE</h1>
+<div id="matches">Жүктелуде...</div>
 
-<div class="card">
-<h2>Real Madrid — Celta</h2>
-<p>🕐 01:00</p>
-<a href="https://t.me/footballDop">Матчты көру</a>
-</div>
-
-<div class="card">
-<h2>Barcelona — Sevilla</h2>
-<p>🕐 22:00</p>
-<a href="https://t.me/footballDop">Матчты көру</a>
-</div>
-
+<script>
+fetch('./matches.json')
+.then(r=>r.json())
+.then(data=>{
+ const box=document.getElementById('matches');
+ box.innerHTML='';
+ data.forEach(m=>{
+  box.innerHTML+=`
+  <div class="card">
+   <div class="match">
+    <div class="team">${m.home}</div>
+    <div class="time">${m.time}</div>
+    <div class="team">${m.away}</div>
+   </div>
+   <a href="${m.link}" target="_blank">Матч туралы</a>
+  </div>`;
+ });
+})
+.catch(()=>{
+ document.getElementById('matches').innerText='Матчтар жүктелмеді';
+});
+</script>
 </body>
 </html>
