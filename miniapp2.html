@@ -2,76 +2,45 @@
 <html lang="kk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>footballDop LIVE</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;background:#0e1117;color:white;
- font-family:Arial,sans-serif;padding:16px
-}
-header{display:flex;align-items:center;justify-content:space-between}
-.logo{color:#ff7900;font-size:24px;font-weight:bold}
-.live{background:#ff7900;padding:5px 10px;border-radius:20px}
-.nav{display:flex;gap:10px;margin:20px 0}
-.nav button{flex:1;background:#222833;color:white;border:0;padding:12px;border-radius:10px}
-.card{background:#1b222d;padding:15px;border-radius:14px;margin:12px 0}
-.match{display:flex;justify-content:space-between;align-items:center;text-align:center}
-.team{width:40%;font-weight:bold}
-.time{color:#ff7900;font-weight:bold}
+body{margin:0;background:#101114;color:white;font-family:Arial;padding:16px}
+h1{color:#ff7900}
+.card{background:#202126;padding:16px;border-radius:15px;margin:12px 0;border:1px solid #333}
+button{background:#ff7900;border:0;padding:14px;border-radius:12px;color:white;width:100%;font-size:16px;font-weight:bold}
 a{color:#ff7900;text-decoration:none}
-h3{margin-top:0}
-button{cursor:pointer}
 </style>
 </head>
 <body>
+<h1>⚽ footballDop</h1>
+<p>LIVE футбол</p>
 
-<header>
- <div class="logo">⚽ footballDop</div>
- <div class="live">LIVE</div>
-</header>
-
-<div class="nav">
- <button onclick="show('matches')">⚽ Матчтар</button>
- <button onclick="show('streams')">📺 LIVE</button>
- <button onclick="show('chat')">💬 Чат</button>
+<div class="card">
+<h3>📅 Матчтар</h3>
+<p>Матчтардың толық кестесі</p>
+<button onclick="openMatches()">⚽ Барлық матчтар</button>
 </div>
 
-<div id="matches">
- <div class="card">
-  <h3>📅 Матчтар</h3>
-  <p>Матчтардың кестесі</p>
-  <a href="./live.html">Матчтар кестесін ашу →</a>
- </div>
+<div class="card">
+<h3>📺 LIVE</h3>
+<p>Ресми трансляция сілтемелері</p>
+<a href="https://t.me/footballDop">Сілтемелер →</a>
 </div>
 
-<div id="streams" style="display:none">
- <div class="card">
-  <h3>📺 Трансляциялар</h3>
-  <p>Матч трансляцияларын көруге арналған ресми сілтемелер</p>
-  <a href="https://t.me/footballDop">Сілтемелер →</a>
- </div>
-</div>
-
-<div id="chat" style="display:none">
- <div class="card">
-  <h3>💬 Жанкүйерлер</h3>
-  <p>Футбол жанкүйерлерімен бірге бол!</p>
-  <a href="https://t.me/footballDop">Telegram арнасы →</a>
- </div>
+<div class="card">
+<h3>💬 Жанкүйерлер</h3>
+<a href="https://t.me/footballDop">Telegram →</a>
 </div>
 
 <script>
-function show(id){
- document.getElementById('matches').style.display='none';
- document.getElementById('streams').style.display='none';
- document.getElementById('chat').style.display='none';
- document.getElementById(id).style.display='block';
+function openMatches(){
+window.location.href="https://87762458881a-commits.github.io/football-live-/live.html";
 }
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
 </script>
-
 </body>
 </html>
